@@ -2,15 +2,15 @@
 <p style='text-align: justify'>This repository is a report based on data from <a href="https://www.kaggle.com/jboysen/mri-and-alzheimers">Kaggle</a> regarding cross-sectional and longitudinal MRI studies of patients with and without <a href="https://wikipedia.org/wiki/dementia">dementia</a>. This data is available free to the public by <a href="https://oasis-brains.org">OASIS</a>. To read the report, download the repository and run `Dementia.ipynb` in a <a href="https://jupyter.org">Jupyter</a> notebook. Readers are encouraged to further explore the data using this notebook.</p>
 
 ### Contents
-* `Dementia.ipynb` is the technical report written in the style of a research article. Code cells within
+* `Dementia.ipynb` is a technical report written in the style of a research article. Code cells within
 the notebook depend on the included `dementia/` module, CSV files within `data/`, and the folder hierarchy
  of `PKLs/`.
 * `Data/` contains two CSV files of the OASIS datasets.
-* `dementia/` is the local module containing the following files.
+* `dementia/` is a local python module containing the following files.
     *  `analysis.py` contains the Analysis object for statistical and machine learning steps of the report.
     * `param_map.py` contains the PARAM_MAP dictionary for default machine learning parameter exploration.
     This dictionary can be modified, replaced, or removed by the user.
-    * `utilities.py` contains the transform_data() and principal_component_analysis() functions for data
+    * `utilities.py` contains the transform_data() and principal_component_transformation() functions for data
     processing steps of the report
 * `PKLs/` contains folders `old/` and `latest/` for storing saved machine learning result tables
 * `WIP_notebooks/` contains an unsupported previous version of the report with additional work-in-progress 
