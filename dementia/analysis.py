@@ -147,34 +147,44 @@ class Analysis(object):
 
         return out_df
 
-    def violin_plots(self, x=None, hue='Sex'):
+    def violin_plots(self, x=None, hue='Sex', figsize=(8, 8)):
         """Plots a violin plot of each feature column
 
         Keyword arguments:
             x -- column name to group the data along the x-axis (recommend 'Group')
             hue -- column name to split the violin plots (default 'Sex')
+            figsize -- tuple of figure dimensions
         """
         number_of_columns = len(self.features)
+        plot_rows = int(np.ceil(number_of_columns / 2))
+        plot_columns = 2
+        fig, axes = plt.subplots(plot_rows, plot_columns, figsize=figsize)
+
         df_hue = self.df[hue] if hue else None
         split = True if any(df_hue) else False
         df_x = self.df[x] if x else None
-        n = 1
 
+        n = 0
         for c in self.features:
             if c != hue:
                 try:
-                    plt.subplot(np.ceil(number_of_columns / 2), 2, n)
-                    sns.violinplot(x=df_x, y=self.df[c], hue=df_hue, split=split)
+                    pos1 = n if n < plot_rows else n - plot_rows
+                    pos2 = 0 if n < plot_rows else 1
+                    sns.violinplot(x=df_x, y=self.df[c], hue=df_hue, split=split, ax=axes[pos1, pos2])
                     n += 1
                 except KeyError:
                     continue
+        plt.tight_layout()
         plt.show()
 
-    def three_d_plot(self, axes):
+    def three_d_plot(self, axes, figsize=(8, 8)):
         """Plots a 3D scatter plot of three feature columns
 
         Positional argument:
             axes -- list or tuple of at least three column names; names after the first three are ignored
+
+        Keyword argument:
+            figsize -- tuple of figure dimensions
         """
         def color_map(c):
             if c == 0:
@@ -190,7 +200,7 @@ class Analysis(object):
 
         color = list(map(color_map, self.df['CDR'].values))
 
-        fig = plt.figure()
+        fig = plt.figure(figsize=figsize)
         ax = fig.add_subplot(111, projection='3d')
         ax.scatter(self.df[axes[0]], self.df[axes[1]], self.df[axes[2]], c=color)
         ax.view_init(30, 250)
@@ -231,10 +241,14 @@ class Analysis(object):
 
         return pd.DataFrame(skew_kurt)
 
-    def correlations(self):
-        """Plots a scatter matrix and gives a table of r values between each permutation of two columns"""
-        plt.figure(figsize=(16, 12))
-        pd.plotting.scatter_matrix(self.df[self.features], diagonal='hist')
+    def correlations(self, figsize=(8, 8)):
+        """Plots a scatter matrix and gives a table of r values between each permutation of two columns
+
+        Keyword argument:
+            figsize -- tuple of figure dimensions
+        """
+        fig, ax = plt.subplots(figsize=figsize)
+        pd.plotting.scatter_matrix(self.df[self.features], diagonal='hist', ax=ax)
         plt.show()
 
         return self.df[self.features].corr()
