@@ -10,10 +10,10 @@ dependencies:
   - pandas
   - scikit-learn
   - seaborn
-  - notebook
   - pip
   - pip:
+    - notebook
     - ipython-genutils
-    - jupyter-client==5.1.0
+    - jupyter-client
     - jupyter-console
     - jupyter-core
