@@ -4,21 +4,19 @@ channels:
   - scitools
   - defaults
 dependencies:
-  - python>3.6.2
+  - python>3.7.6
   - matplotlib
   - numpy
   - pandas
   - scikit-learn
   - seaborn
   - notebook
+  - ipython-genutils
+  - jupyter-client==5.1.0
+  - jupyter-console
+  - jupyter-core
+  - pip
   - pip:
-    - glob
-    - itertools
-    - mpl_toolkits
     - datetime
     - warnings
-    - ipython-genutils
-    - jupyter-client==5.1.0
-    - jupyter-console
-    - jupyter-core
-    - prompt-toolkit
+    
