@@ -1,0 +1,15 @@
+name: dementia-environment
+channels:
+  - conda-forge
+dependencies:
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - seaborn
+  - notebook
+  - datetime
+  - glob
+  - itertools
+  - mpl_toolkits
+  - warnings
