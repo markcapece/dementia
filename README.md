@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markcapece/dementia/master?filepath=https%3A%2F%2Fgithub.com%2Fmarkcapece%2Fdementia%2Fblob%2Fmaster%2FDementia.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/markcapece/dementia/master)
 ## Predicting Dementia in Elderly Patients Using Machine Learning
 <p style='text-align: justify'>This repository is a report based on data from <a href="https://www.kaggle.com/jboysen/mri-and-alzheimers">Kaggle</a> regarding cross-sectional and longitudinal MRI studies of patients with and without <a href="https://wikipedia.org/wiki/dementia">dementia</a>. This data is available free to the public by <a href="https://oasis-brains.org">OASIS</a>. To read the report, download the repository and run Dementia.ipynb in a <a href="https://jupyter.org">Jupyter</a> notebook. Readers are encouraged to further explore the data using this notebook.</p>
 
