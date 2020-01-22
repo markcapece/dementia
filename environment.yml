@@ -1,6 +1,8 @@
 name: dementia-environment
 channels:
   - conda-forge
+  - scitools
+  - defaults
 dependencies:
   - matplotlib
   - numpy
@@ -13,3 +15,9 @@ dependencies:
   - itertools
   - mpl_toolkits
   - warnings
+  - python>3.6.2
+  - ipython-genutils
+  - jupyter-client==5.1.0
+  - jupyter-console
+  - jupyter-core
+  - prompt-toolkit
