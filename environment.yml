@@ -11,12 +11,11 @@ dependencies:
   - scikit-learn
   - seaborn
   - notebook
-  - ipython-genutils
-  - jupyter-client==5.1.0
-  - jupyter-console
-  - jupyter-core
   - pip
   - pip:
     - datetime
     - warnings
-    
+    - ipython-genutils
+    - jupyter-client==5.1.0
+    - jupyter-console
+    - jupyter-core
